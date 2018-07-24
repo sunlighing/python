@@ -1,0 +1,30 @@
+  class Solution:
+    def generate(self, numRows):
+        """
+        :type numRows: int
+        :rtype: List[List[int]]
+        """
+        list_all = {};
+        list_tump = {};
+        for i in range(0,numRows):
+            list_all[i] ={};
+            for j in range(0,i+1):
+                print(i,"行",j,"列",len(list_tump),"上个的长",)
+                if len(list_tump) >0 :
+                    if j == 0:
+                        list_all[i][j] = 1
+                    elif j == i:
+                        list_all[i][j] = 1
+                    else :
+                        list_all[i][j]= list_tump[j-1] +list_tump[j]
+                        print(list_all[i][j],"数")
+            list_tump = list_all[i]
+        return list_all
+        
+def main():
+        ret = Solution().generate(7)
+        print(ret)
+      
+
+if __name__ == '__main__':
+    main()
